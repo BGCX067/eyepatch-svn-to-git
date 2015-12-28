@@ -1,0 +1,320 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_PENCURSOR           CURSOR                  "Resources\\aero_pen_l.cur"
+IDC_DROPCURSOR          CURSOR                  "Resources\\Drop.cur"
+IDC_TRASHCURSOR         CURSOR                  "Resources\\Trash.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_EYEPATCH            ICON                    "Resources\\Eyepatch.ico"
+IDI_FRAMELEFT           ICON                    "resources\\frameleft.ico"
+IDI_FRAMERIGHT          ICON                    "resources\\frameright.ico"
+IDI_MARKIN              ICON                    "resources\\markin.ico"
+IDI_MARKOUT             ICON                    "resources\\markout.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open Video...",              ID_FILE_OPENVIDEO
+        MENUITEM "&Record Video...",            ID_FILE_RECORDVIDEO
+        MENUITEM "Open &Sample(s)...",          ID_FILE_OPENSAMPLE
+        MENUITEM SEPARATOR
+        MENUITEM "Empty &Trash",                ID_FILE_EMPTYTRASH
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&Settings"
+    BEGIN
+        MENUITEM "Capture &Source...",          ID_SETTINGS_CAPTURESOURCE
+        MENUITEM "Capture &Format...",          ID_SETTINGS_CAPTUREFORMAT
+        MENUITEM "&Version Information...",     ID_SETTINGS_VERSIONINFO
+    END
+    POPUP "&Mode"
+    BEGIN
+        MENUITEM "&Create Recognizers",         ID_MODE_CREATERECOGNIZERS, CHECKED
+        MENUITEM "&Run Recognizers",            ID_MODE_RUNRECOGNIZERS
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIDEOLOADER_DIALOG DIALOGEX 0, 0, 227, 195
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Converting Video"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Stop Converting",IDCANCEL,82,174,69,14
+    LTEXT           "Converting to a seekable format...",IDC_PROGRESS_LABEL,7,7,213,12
+END
+
+IDD_HAAR_DIALOG DIALOGEX 0, 0, 186, 89
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Creating Recognizer"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Stop Learning",IDCANCEL,67,68,50,14
+    CONTROL         "",IDC_HAAR_PROGRESS,"msctls_progress32",WS_BORDER,7,41,172,24
+    LTEXT           "Now learning from your examples... \nYou can interrupt anytime, but longer training time results in a better recognizer.",IDC_STATIC,7,7,172,28
+END
+
+IDD_FILTERSELECT_DIALOG DIALOGEX 0, 0, 254, 182
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Learn from Examples",IDC_TRAINBUTTON,6,54,78,30
+    CONTROL         "Show Guesses",IDC_SHOWBUTTON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,54,60,8
+    PUSHBUTTON      "Save Recognizer",IDC_SAVEFILTER,168,54,78,30
+    LTEXT           "Saved Recognizers:",IDC_STATIC,6,90,66,8
+    CONTROL         "",IDC_FILTER_LIST,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,6,102,240,72
+    COMBOBOX        IDC_FILTER_COMBO,73,3,118,20,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Recognizer Type:",IDC_STATIC,7,6,66,8
+    LTEXT           "Threshold:",IDC_STATIC,7,29,56,8
+    CONTROL         "",IDC_FILTER_THRESHOLD,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,71,26,164,16
+    LTEXT           "Low",IDC_STATIC,72,42,15,8
+    LTEXT           "High",IDC_STATIC,216,42,18,8
+    PUSHBUTTON      "Quick Test",IDC_QUICKTEST,90,66,72,18
+END
+
+IDD_VIDEORECORDER_DIALOG DIALOGEX 0, 0, 227, 195
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Recording Video"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Stop Recording",IDCANCEL,78,174,71,14
+    LTEXT           "Recording in progress...",IDC_PROGRESS_LABEL,7,7,213,12
+END
+
+IDD_VIDEOCONTROL_DIALOG DIALOGEX 0, 0, 405, 41
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_VIDEOSLIDER,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,31,1,343,18
+    PUSHBUTTON      "  Mark In",IDC_MARKIN,67,20,81,14
+    PUSHBUTTON      "  Mark Out",IDC_MARKOUT,169,20,81,14
+    PUSHBUTTON      "Grab Range",IDC_GRABRANGE,268,20,81,14
+    PUSHBUTTON      "<",IDC_FRAMELEFT,7,1,21,17,BS_ICON
+    PUSHBUTTON      ">",IDC_FRAMERIGHT,377,1,21,17,BS_ICON
+END
+
+IDD_FILTERLIBRARY_DIALOG DIALOGEX 0, 0, 440, 452
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Run on Live Video!",IDC_RUNLIVE,12,402,114,36
+    PUSHBUTTON      "Run on Recorded Video...",IDC_RUNRECORDED,132,402,114,36
+    LTEXT           "Custom Recognizers: Double Click to Activate",IDC_STATIC,12,24,171,8
+    CONTROL         "",IDC_MY_FILTER_LIST,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,12,38,234,99
+    LTEXT           "Standard Recognizers: Double Click to Activate",IDC_STATIC,12,146,195,8
+    CONTROL         "",IDC_STD_FILTER_LIST,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,12,161,234,99
+    CONTROL         "",IDC_OUTPUT_LIST,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,12,293,234,96
+    CONTROL         "",IDC_ACTIVE_FILTER_LIST,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,270,39,156,136
+    CONTROL         "",IDC_ACTIVE_OUTPUT_LIST,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_EDITLABELS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,270,253,156,136
+    PUSHBUTTON      "Clear All",IDC_RESET,270,402,156,36
+    LTEXT           "Active Recognizers: Double Click to Configure",IDC_STATIC,270,24,151,8
+    LTEXT           "Active Outputs:",IDC_STATIC,270,236,114,8
+    GROUPBOX        "Active Components",IDC_STATIC,264,6,168,435
+    GROUPBOX        "Recognizer Library",IDC_STATIC,6,6,246,261
+    GROUPBOX        "Outputs: Double Click to Activate",IDC_STATIC,7,278,244,118
+    CONTROL         "LIST",IDC_COMBINE_LIST,"Button",BS_AUTORADIOBUTTON,288,192,37,16
+    CONTROL         "AND",IDC_COMBINE_AND,"Button",BS_AUTORADIOBUTTON,348,192,37,16
+    CONTROL         "OR",IDC_COMBINE_OR,"Button",BS_AUTORADIOBUTTON,288,210,37,16
+    CONTROL         "CASCADE",IDC_COMBINE_CASCADE,"Button",BS_AUTORADIOBUTTON,348,210,46,16
+    GROUPBOX        "Combine Recognizers",IDC_STATIC,270,180,156,54
+END
+
+IDD_FLOWTRACKER_DIALOG DIALOGEX 0, 0, 227, 195
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Extracting Motion"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Stop Learning Gestures",IDCANCEL,70,174,89,14
+    LTEXT           "Identifying the motion trajectories in this video...",IDC_PROGRESS_LABEL,7,7,213,12
+END
+
+IDD_CLASSIFIER_DIALOG DIALOGEX 0, 0, 201, 195
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Recognizer Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,56,163,89,25
+    LTEXT           "Select which data should be output from this Recognizer:",IDC_TOP_LABEL,7,7,187,27
+END
+
+IDD_QUICKTEST_DIALOG DIALOGEX 0, 0, 352, 196
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Recognizer QuickTest"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,126,163,100,25
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_VIDEOLOADER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    IDD_HAAR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 82
+    END
+
+    IDD_FILTERSELECT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_VIDEORECORDER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    IDD_VIDEOCONTROL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 398
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 34
+    END
+
+    IDD_FILTERLIBRARY_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 433
+        BOTTOMMARGIN, 441
+    END
+
+    IDD_FLOWTRACKER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 220
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    IDD_CLASSIFIER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 194
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+
+    IDD_QUICKTEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 345
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 188
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_ARROW               BITMAP                  "Resources\\arrow.bmp"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
